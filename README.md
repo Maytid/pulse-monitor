@@ -25,7 +25,7 @@ A lightweight, macOS-only process and memory monitor built with Rust (Tauri) and
 Because the backend calls XNU/Mach syscalls directly, this only compiles and runs on macOS. You'll need Rust and the Tauri CLI (`cargo install tauri-cli`):
 
 ```bash
-git clone [https://github.com/Maytid/pulse-monitor.git](https://github.com/Maytid/pulse-monitor.git)
+git clone https://github.com/Maytid/pulse-monitor.git
 cd pulse-monitor
 cargo tauri build
 ```
