@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulse Monitor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="top">
+            <div class="stats">
+                <div class="stat">
+                    <span class="label">MEMORY USED</span>
+                    <span id="mem" class="val">0 MB</span>
+                </div>
+                <div class="divider"></div>
+                <div class="stat">
+                    <span class="label">PRESSURE</span>
+                    <div class="pbar"><div id="pFill" class="pfill lvl-1"></div></div>
+                    <span id="press" class="pval lvl-1">0% Normal</span>
+                </div>
+            </div>
+            <div class="controls">
+                <input id="q" type="text" placeholder="Filter name, PID, or port...">
+                <button id="portBtn" class="toggle">Ports Only</button>
+                <button id="liveBtn" class="toggle active">Live</button>
+            </div>
+        </div>
+        <div class="timeline">
+            <canvas id="spark" height="28"></canvas>
+            <input id="scrub" type="range" min="0" max="0" value="0">
+            <span id="ts" class="ts">--:--:--</span>
+        </div>
+    </header>
+
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Process</th>
+                    <th class="num col-pid">PID</th>
+                    <th class="num col-cpu">CPU</th>
+                    <th class="num col-mem">Memory</th>
+                    <th class="num col-del">Delta</th>
+                    <th class="col-prt">Ports</th>
+                    <th class="act col-act">Action</th>
+                </tr>
+            </thead>
+            <tbody id="list"></tbody>
+        </table>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-box">
+            <div id="mTitle" class="modal-title"></div>
+            <div id="mDesc" class="modal-desc"></div>
+            <div class="modal-actions">
+                <button id="mCancel" class="toggle">Cancel</button>
+                <button id="mConfirm" class="btn-danger">Quit</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
